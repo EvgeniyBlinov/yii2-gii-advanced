@@ -1,6 +1,6 @@
 <?php
 
-namespace generators\model;
+namespace cent\gii\generators\model;
 
 use Yii;
 use yii\gii\CodeFile;
