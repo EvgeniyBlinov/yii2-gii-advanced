@@ -1,6 +1,6 @@
 <?php
 
-namespace common\etc\gii_custom\templates\model;
+namespace generators\model;
 
 use Yii;
 use yii\gii\CodeFile;
