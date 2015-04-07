@@ -5,6 +5,12 @@ namespace common\etc\gii_custom\templates\model;
 use Yii;
 use yii\gii\CodeFile;
 
+/**
+ * Generator
+ *
+ * @package default
+ * @author Evgeniy Blinov <evgeniy_blinov@mail.ru>
+**/
 class Generator extends \yii\gii\generators\model\Generator
 {
     /**
