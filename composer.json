@@ -1,0 +1,17 @@
+{
+    "name": "cent/yii2-gii-advanced",
+    "type": "yii2-bundle",
+    "description": "Cent yii2 gii advanced",
+    "authors": [
+        {
+            "name": "Evgeniy Blinov",
+            "email": "evgeniy_blinov@mail.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-0": { "": "" }
+    }
+}
