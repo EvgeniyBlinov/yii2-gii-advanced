@@ -24,7 +24,7 @@ yii2-gii-advanced
                   "reference":"master"
                 },
                 "autoload": {
-                    "psr-0": { "": "" }
+                    "psr-4": { "cent\\gii\\": "" }
                 }
             }
         }
