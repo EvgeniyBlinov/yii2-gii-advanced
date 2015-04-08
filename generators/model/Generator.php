@@ -22,6 +22,10 @@ class Generator extends \yii\gii\generators\model\Generator
      * @var string
      **/
     public $baseClass = '\common\models\Base';
+    /**
+     * @var boolean
+     **/
+    public $useTranslations = true;
 
     /**
      * @return array of required templates
@@ -29,6 +33,26 @@ class Generator extends \yii\gii\generators\model\Generator
     public function requiredTemplates()
     {
         return ['model.php','modelBase.php'];
+    }
+
+    /**
+     * @return array of rules
+     **/
+    public function rules()
+    {
+        return array_merge(parent::rules(), [
+            [['useTranslations'], 'boolean'],
+        ]);
+    }
+
+    /**
+     * @return array of attribute labels
+     **/
+    public function attributeLabels()
+    {
+        return array_merge(parent::attributeLabels(), [
+            'useTranslations' => 'Use Translations',
+        ]);
     }
 
     /**

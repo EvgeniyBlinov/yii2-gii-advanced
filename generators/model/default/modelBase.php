@@ -78,7 +78,11 @@ class <?= $className ?>Base extends <?=  pathinfo($generator->baseClass, PATHINF
     {
         return [
 <?php foreach ($labels as $name => $label): ?>
-            <?= "'$name' => " . $generator->generateString($label) . ",\n" ?>
+            <?php echo sprintf("'%s' => %s",
+                $name,
+                (($generator->useTranslations) ?
+                    "Yii::t('app', " . $generator->generateString($label) . "),\n" :
+                    $generator->generateString($label) . ",\n")) ?>
 <?php endforeach; ?>
         ];
     }

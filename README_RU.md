@@ -33,3 +33,19 @@ yii2-gii-advanced
 
 Для загрузки бандла нужно выполнить `composer install`.
 
+## Подключение
+
+```php
+if (!YII_ENV_TEST) {
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'allowedIPs' => ['127.0.0.1'],
+        'class' => 'yii\gii\Module',
+        'generators' => [
+            'model' => [
+                'class' => 'cent\gii\generators\model\Generator',
+            ]
+        ]
+    ];
+}
+```
