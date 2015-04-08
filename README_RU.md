@@ -8,16 +8,15 @@ yii2-gii-advanced
 
 ```json
    "require":{
-        "cent/yii2-gii-advanced": "v0.0.1"
+        "cent/yii2-gii-advanced": "v0.1.0"
     },
 
-    "minimum-stability": "dev",
     "repositories": [
         {
             "type"   :"package",
             "package": {
               "name"      : "cent/yii2-gii-advanced",
-              "version"   :"v0.0.1",
+              "version"   :"v0.1.0",
               "source": {
                   "url": "https://github.com/EvgeniyBlinov/yii2-gii-advanced",
                   "type": "git",
