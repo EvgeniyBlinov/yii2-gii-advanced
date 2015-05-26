@@ -18,7 +18,7 @@ echo "<?php\n";
 namespace <?= $namespaceModel ?>;
 
 use Yii;
-use <?= $namespaceBase ?>;
+use <?= $namespaceBase ?>\<?= $className ?>Base;
 
 /**
  * This is the model class for table "<?= $generator->generateTableName($tableName) ?>".
