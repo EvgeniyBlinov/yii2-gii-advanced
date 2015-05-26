@@ -14,9 +14,14 @@ use yii\gii\CodeFile;
 class Generator extends \yii\gii\generators\model\Generator
 {
     /**
-     * @var string
+     * @var string of models path
      **/
     public $ns        = 'common\models';
+
+    /**
+     * @var string of Base models path
+     **/
+    public $nsBase    = 'common\models';
 
     /**
      * @var string
@@ -42,9 +47,10 @@ class Generator extends \yii\gii\generators\model\Generator
      */
     public function generate()
     {
-        $files     = [];
-        $relations = $this->generateRelations();
-        $db        = $this->getDbConnection();
+        $files        = [];
+        $relations    = $this->generateRelations();
+        $db           = $this->getDbConnection();
+        $this->nsBase = $this->nsBase ?: $this->ns;
         foreach ($this->getTableNames() as $tableName) {
             $className   = $this->generateClassName($tableName);
             $tableSchema = $db->getTableSchema($tableName);
@@ -57,7 +63,7 @@ class Generator extends \yii\gii\generators\model\Generator
                 'relations'   => isset($relations[$className]) ? $relations[$className] : [],
             ];
             $files[] = new CodeFile(
-                Yii::getAlias('@' . str_replace('\\', '/', $this->ns)) . '/' . lcfirst($className) . '/' . $className . 'Base.php',
+                Yii::getAlias('@' . str_replace('\\', '/', $this->nsBase)) . '/' . lcfirst($className) . '/' . $className . 'Base.php',
                 $this->render('modelBase.php', $params)
             );
             $files[] = new CodeFile(
