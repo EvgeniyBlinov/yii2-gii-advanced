@@ -1,6 +1,6 @@
 {
     "name"        : "cent/yii2-gii-advanced",
-    "version"     : "v0.1.0",
+    "version"     : "v0.1.2",
     "type"        : "yii2-bundle",
     "description" : "Cent yii2 gii advanced",
     "authors"     : [
