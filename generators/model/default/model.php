@@ -15,7 +15,7 @@
 echo "<?php\n";
 ?>
 
-namespace <?= $generator->ns . '\\' . lcfirst($className) ?>;
+namespace <?= $namespaceModel ?>;
 
 use Yii;
 
