@@ -27,10 +27,16 @@ class Generator extends \yii\gii\generators\model\Generator
      * @var string
      **/
     public $baseClass = '\common\models\Base';
+
     /**
      * @var boolean
      **/
     public $enableI18N = true;
+
+    /**
+     * @var boolean
+     **/
+    public $useSubFolder = false;
 
     /**
      * @return array of required templates
@@ -62,12 +68,13 @@ class Generator extends \yii\gii\generators\model\Generator
                 'rules'       => $this->generateRules($tableSchema),
                 'relations'   => isset($relations[$className]) ? $relations[$className] : [],
             ];
-            $files[] = new CodeFile(
-                Yii::getAlias('@' . str_replace('\\', '/', $this->nsBase)) . '/' . lcfirst($className) . '/' . $className . 'Base.php',
+            $subFolder = $this->useSubFolder() ? '/' . lcfirst($className) : '';
+            $files[]   = new CodeFile(
+                Yii::getAlias('@' . str_replace('\\', '/', $this->nsBase)) . $subFolder . '/' . $className . 'Base.php',
                 $this->render('modelBase.php', $params)
             );
-            $files[] = new CodeFile(
-                Yii::getAlias('@' . str_replace('\\', '/', $this->ns)) . '/' . lcfirst($className) . '/' . $className . '.php',
+            $files[]   = new CodeFile(
+                Yii::getAlias('@' . str_replace('\\', '/', $this->ns)) . $subFolder . '/' . $className . '.php',
                 $this->render('model.php', $params)
             );
         }
