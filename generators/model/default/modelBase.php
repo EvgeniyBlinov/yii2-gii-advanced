@@ -26,7 +26,11 @@ use <?=$generator->baseClass . ";\n"?>
 <?php endif; ?>
 <?php foreach ($relations as $name => $relation): ?>
 <?php if ($relation[1] != $className):?>
+<?php if ($generator->useSubFolder):?>
 use <?= $generator->ns . '\\' . lcfirst($relation[1]) . '\\' . ucfirst($relation[1]) . ";\n"?>
+<?php else: ?>
+use <?= $generator->ns . '\\' . ucfirst($relation[1]) . ";\n"?>
+<?php endif;?>
 <?php endif;?>
 <?php endforeach; ?>
 
