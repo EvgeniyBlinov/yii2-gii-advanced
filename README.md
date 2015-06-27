@@ -4,34 +4,10 @@ yii2-gii-advanced
 
 ## Install
 
-Put to composer.json
-
-```json
-   "require":{
-        "cent/yii2-gii-advanced": "v0.1.0"
-    },
-
-    "repositories": [
-        {
-            "type"   :"package",
-            "package": {
-              "name"      : "cent/yii2-gii-advanced",
-              "version"   :"v0.1.0",
-              "source": {
-                  "url": "https://github.com/EvgeniyBlinov/yii2-gii-advanced",
-                  "type": "git",
-                  "reference":"master"
-                },
-                "autoload": {
-                    "psr-4": { "cent\\gii\\": "" }
-                }
-            }
-        }
-    ]
+```sh
+composer config repositories.yii2-gii-advanced git https://github.com/EvgeniyBlinov/yii2-gii-advanced
+composer require "cent/yii2-gii-advanced:v0.1.3"
 ```
-
-Run `composer install`.
-
 ## Usage
 
 ```php
