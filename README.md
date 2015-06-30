@@ -8,6 +8,7 @@ yii2-gii-advanced
 composer config repositories.yii2-gii-advanced git https://github.com/EvgeniyBlinov/yii2-gii-advanced
 composer require "cent/yii2-gii-advanced:v0.1.3"
 ```
+
 ## Usage
 
 ```php
